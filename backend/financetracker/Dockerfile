@@ -1,4 +1,5 @@
-FROM amazoncorretto:21-alpine-jdk
-MAINTAINER baeldung.com
-COPY target/docker-message-server-1.0.0.jar message-server-1.0.0.jar
-ENTRYPOINT ["java","-jar","/message-server-1.0.0.jar"]
+FROM openjdk:21
+WORKDIR /app
+COPY ./target/spring-0.0.1-SNAPSHOT.jar /app
+EXPOSE 8080
+CMD ["java", "-jar", "spring-0.0.1-SNAPSHOT.jar"]
