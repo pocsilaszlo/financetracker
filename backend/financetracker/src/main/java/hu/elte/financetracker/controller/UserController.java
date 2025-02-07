@@ -12,7 +12,7 @@ import java.util.Map;
 public class UserController {
 
     @GetMapping("/me")
-    public String publicEndpoint() {
-        return "Ez egy nyilvános végpont!";
+    public Map<?,?> publicEndpoint() {
+        return Map.of("key", "value");
     }
 }
