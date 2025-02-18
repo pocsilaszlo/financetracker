@@ -3,6 +3,7 @@ package hu.elte.financetracker.controller;
 import hu.elte.financetracker.entity.Category;
 import hu.elte.financetracker.entity.Transaction;
 import hu.elte.financetracker.service.FinanceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ public class TransactionController {
 
     private FinanceService financeService;
 
+    @Autowired
     public TransactionController(FinanceService financeService) {}
 
     @GetMapping("/all")
@@ -30,8 +32,8 @@ public class TransactionController {
 
     @GetMapping("/categories/all")
     private ResponseEntity<?> getCategories(){
-        return new ResponseEntity<>(financeService.getAllCategories(), HttpStatus.OK);
-        //return Map.of("key", "value");
+        //return new ResponseEntity<>(financeService.getAllCategories(), HttpStatus.OK);
+        return new ResponseEntity<>(Map.of("key", "value"), HttpStatus.OK);
     }
 
     @PostMapping("/categories/add")
