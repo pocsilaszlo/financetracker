@@ -14,7 +14,10 @@ public class FinanceService {
     private TransactionRepository transactionRepository;
     private CategoryRepository categoryRepository;
 
-    public FinanceService(TransactionRepository transactionRepository, CategoryRepository categoryRepository) {}
+    public FinanceService(TransactionRepository transactionRepository, CategoryRepository categoryRepository) {
+        this.transactionRepository = transactionRepository;
+        this.categoryRepository = categoryRepository;
+    }
 
     public List<Transaction> getAllTransactions() {
         return transactionRepository.findAll();

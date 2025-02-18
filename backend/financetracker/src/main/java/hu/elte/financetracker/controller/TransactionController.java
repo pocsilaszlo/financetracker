@@ -16,8 +16,9 @@ public class TransactionController {
 
     private FinanceService financeService;
 
-    @Autowired
-    public TransactionController(FinanceService financeService) {}
+    public TransactionController(FinanceService financeService) {
+        this.financeService = financeService;
+    }
 
     @GetMapping("/all")
     private ResponseEntity<?> getTransactions(){
