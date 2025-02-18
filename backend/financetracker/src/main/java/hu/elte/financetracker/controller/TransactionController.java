@@ -32,8 +32,8 @@ public class TransactionController {
 
     @GetMapping("/categories/all")
     private ResponseEntity<?> getCategories(){
-        //return new ResponseEntity<>(financeService.getAllCategories(), HttpStatus.OK);
-        return new ResponseEntity<>(Map.of("key", "value"), HttpStatus.OK);
+        return new ResponseEntity<>(financeService.getAllCategories(), HttpStatus.OK);
+        //return new ResponseEntity<>(Map.of("key", "value"), HttpStatus.OK);
     }
 
     @PostMapping("/categories/add")
