@@ -16,6 +16,7 @@ public class TransactionController {
 
     private FinanceService financeService;
 
+    @Autowired
     public TransactionController(FinanceService financeService) {
         this.financeService = financeService;
     }

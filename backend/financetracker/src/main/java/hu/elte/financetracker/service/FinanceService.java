@@ -4,6 +4,7 @@ import hu.elte.financetracker.entity.Category;
 import hu.elte.financetracker.entity.Transaction;
 import hu.elte.financetracker.repository.CategoryRepository;
 import hu.elte.financetracker.repository.TransactionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class FinanceService {
     private TransactionRepository transactionRepository;
     private CategoryRepository categoryRepository;
 
+    @Autowired
     public FinanceService(TransactionRepository transactionRepository, CategoryRepository categoryRepository) {
         this.transactionRepository = transactionRepository;
         this.categoryRepository = categoryRepository;
